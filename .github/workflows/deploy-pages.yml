@@ -20,6 +20,10 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
+# In .github/workflows/deploy-pages.yml
+
+# ... (name, on, permissions, concurrency sections are the same) ...
+
 jobs:
   deploy:
     environment:
@@ -35,15 +39,15 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
-      - name: Build
+      - name: Build  # This step now uses Vite
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload everything from the root directory, including the new /dist folder
-          path: '.'
+          # CHANGE THE PATH HERE to upload the contents of the dist folder
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

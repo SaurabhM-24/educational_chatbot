@@ -1,5 +1,7 @@
 // script.js
 
+import './style.css';
+
 import { initializeHistoryPane } from './components/historyPane.js';
 import { initializeChatArea } from './Components/chatArea.js';
 import { initializeSuggestions } from './Components/promptSuggestions.js';
