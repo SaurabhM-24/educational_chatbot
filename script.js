@@ -2,7 +2,7 @@
 
 import './style.css';
 
-import { initializeHistoryPane } from './components/historyPane.js';
+import { initializeHistoryPane } from './Components/historyPane.js';
 import { initializeChatArea } from './Components/chatArea.js';
 import { initializeSuggestions } from './Components/promptSuggestions.js';
 import { initializeToggles } from './Components/uiToggles.js'; // NEW
